@@ -41,7 +41,7 @@ end
 namespace :bundler do
   desc "Run: bundle install"
   task :install_gems, :role => :app do
-     run "#{current_release} bundle install"
+     run "cd #{current_release} bundle install"
   end
 
   desc "Run: bundle update"

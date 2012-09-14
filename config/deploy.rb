@@ -8,9 +8,9 @@ set :scm_passphrase, "madyrocks"
 
 set :user, "root"
 
-role :web, "180.149.241.115"                          # Your HTTP server, Apache/etc
-role :app, "180.149.241.115"                          # This may be the same as your `Web` server
-role :db,  "180.149.241.115", :primary => true # This is where Rails migrations will run
+role :web, "localhost"                          # Your HTTP server, Apache/etc
+role :app, "localhost"                          # This may be the same as your `Web` server
+role :db,  "localhost", :primary => true # This is where Rails migrations will run
 
 #role :db,  "your slave db-server here"
 
@@ -44,6 +44,6 @@ after  "init:create_db", "deploy:migrate"
 
   namespace :init do
     task :create_db, :roles => :app, :except => { :no_release => true } do
-	run "cd #{current_path}; rake RAILS_ENV=#{rails_env} db:create"
+	#run "cd #{current_path}; rake RAILS_ENV=#{rails_env} db:create"
     end
   end

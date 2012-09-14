@@ -18,7 +18,7 @@ role :db,  "180.149.241.115", :primary => true # This is where Rails migrations 
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 
-after "deploy", "deploy:migrate"
+#after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 
 

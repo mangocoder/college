@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-set :rvm_ruby_string, '1.8.7'
+
 
 set :application, "college"
 set :use_sudo, false

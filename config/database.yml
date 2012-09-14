@@ -45,4 +45,4 @@ production:
   pool: 5
   username: root
   password: techprocess123
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock

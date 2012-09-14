@@ -9,11 +9,11 @@ set :scm, :git
 set :repository,  "https://github.com/mangocoder/college.git"
 set :scm_passphrase, "madyrocks"
 
-set :user, "webwerks"
+set :user, "root"
 
-role :web, "localhost"                          # Your HTTP server, Apache/etc
-role :app, "localhost"                          # This may be the same as your `Web` server
-role :db,  "localhost", :primary => true # This is where Rails migrations will run
+role :web, "180.149.241.115"                          # Your HTTP server, Apache/etc
+role :app, "180.149.241.115"                          # This may be the same as your `Web` server
+role :db,  "180.149.241.115", :primary => true # This is where Rails migrations will run
 
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 

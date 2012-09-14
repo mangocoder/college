@@ -48,9 +48,9 @@ after "deploy:update_code", "init:create_db"
 
   namespace :init do
     task :bundle_install, :roles => :app, :except => { :no_release => true } do
-      run "cd #{current_path}; bundle exec bundle install"       
+     # run "cd #{current_path}; bundle exec bundle install"       
     end
     task :create_db, :roles => :app, :except => { :no_release => true } do
-	run "cd #{current_path}; bundle exec rake RAILS_ENV=#{rails_env} db:create"
+	#run "cd #{current_path}; bundle exec rake RAILS_ENV=#{rails_env} db:create"
     end
   end

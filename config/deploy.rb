@@ -42,7 +42,7 @@ after "deploy", "deploy:cleanup"
      # other production specific settings, like
       set :rails_env, 'production'
    end	
-   after "deploy:update_code", "init:check_db_existance"
+   after "deploy:update_code", "init:create_db"
  end
 
 

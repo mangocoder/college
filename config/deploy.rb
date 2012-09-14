@@ -19,7 +19,7 @@ set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
 after "deploy", "deploy:production"
-#after "deploy", "deploy:migrate"
+after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 #after "deploy:update_code", "init:bundle_install"
 after "deploy:update_code", "init:create_db"

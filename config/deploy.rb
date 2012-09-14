@@ -1,4 +1,6 @@
 require 'bundler/capistrano'
+set :bundle_gemfile,  "Gemfile"
+
 set :application, "college"
 
 set :use_sudo, false
@@ -18,7 +20,7 @@ role :db,  "180.149.241.115", :primary => true # This is where Rails migrations 
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
-after "deploy", "deploy:prooduction"
+after "deploy", "deploy:production"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 

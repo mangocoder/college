@@ -16,8 +16,11 @@ role :db,  "180.149.241.115", :primary => true # This is where Rails migrations 
 #role :db,  "your slave db-server here"
 
 set :deploy_to, "/var/www/college"
+set :keep_releases, 3 
 
 after "deploy", "deploy:migrate"
+after "deploy", "deploy:cleanup"
+
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"

@@ -1,7 +1,3 @@
-require 'bundler/capistrano'
-set :bundle_gemfile,  "Gemfile"
-default_run_options[:pty] = true
-
 set :application, "college"
 
 set :use_sudo, false
@@ -44,12 +40,16 @@ after "deploy", "deploy:cleanup"
      set :bundle_without, [:development, :test]
      # other production specific settings, like
       set :rails_env, 'production'
-   end	
+   end	  
+   after "deploy:update_code", "init:bundle_install"
    after "deploy:update_code", "init:create_db"
  end
 
 
   namespace :init do
+    task :bundle_install, :roles => :app, :except => { :no_release => true } do
+      run "cd #{current_path}; bundle exec bundle install"       
+    end
     task :create_db, :roles => :app, :except => { :no_release => true } do
 	run "cd #{current_path}; bundle exec rake RAILS_ENV=#{rails_env} db:create"
     end

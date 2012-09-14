@@ -6,7 +6,7 @@ set :scm, :git
 set :repository,  "https://github.com/mangocoder/college.git"
 set :scm_passphrase, "madyrocks"
 
-set :user, "root"
+set :user, "webwerks"
 
 role :web, "localhost"                          # Your HTTP server, Apache/etc
 role :app, "localhost"                          # This may be the same as your `Web` server

@@ -19,9 +19,10 @@ set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
 after "deploy", "deploy:production"
-after "deploy", "deploy:migrate"
+#after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
-
+after "deploy:update_code", "init:bundle_install"
+after "deploy:update_code", "init:create_db"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -42,8 +43,6 @@ after "deploy", "deploy:cleanup"
      # other production specific settings, like
       set :rails_env, 'production'
    end	  
-   after "deploy:update_code", "init:bundle_install"
-   after "deploy:update_code", "init:create_db"
  end
 
 

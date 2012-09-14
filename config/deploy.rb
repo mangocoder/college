@@ -20,10 +20,8 @@ set :server, :passenger
 
 
 after "deploy:update_code", "init:create_db"
-after  "init:create_db", "deploy:migrate" 
 
-
-# after "deploy:restart", "deploy:cleanup"
+after "deploy:restart", "bundler:install_gems"
 
 
 namespace :init do
@@ -90,4 +88,4 @@ namespace :run_rake do
     run("cd #{deploy_to}/current; rake #{ENV['task']} RAILS_ENV=production")
   end
 end
-# after 'deploy:install_gems'
+

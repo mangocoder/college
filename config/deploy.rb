@@ -21,7 +21,7 @@ set :server, :passenger
 after "deploy", "deploy:production"
 #after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
-after "deploy:update_code", "init:bundle_install"
+#after "deploy:update_code", "init:bundle_install"
 after "deploy:update_code", "init:create_db"
 
 # if you want to clean up old releases on each deploy uncomment this:
@@ -47,10 +47,7 @@ after "deploy:update_code", "init:create_db"
 
 
   namespace :init do
-    task :bundle_install, :roles => :app, :except => { :no_release => true } do
-     # run "cd #{current_path}; bundle exec bundle install"       
-    end
     task :create_db, :roles => :app, :except => { :no_release => true } do
-	#run "cd #{current_path}; bundle exec rake RAILS_ENV=#{rails_env} db:create"
+	run "cd #{current_path}; rake RAILS_ENV=#{rails_env} db:create"
     end
   end

@@ -7,6 +7,7 @@ gem "mysql"
 # gem "geokit"
 gem 'capistrano'
 gem "passenger", "~> 3.0.17"
+gem "rvm-capistrano", "~> 1.2.7"
 
 group :development do
   # bundler requires these gems in development

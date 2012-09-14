@@ -1,4 +1,7 @@
 require 'bundler/capistrano'
+require 'rvm/capistrano'
+set :rvm_ruby_string, '1.8.7'
+
 set :application, "college"
 set :use_sudo, false
 
@@ -12,38 +15,80 @@ role :web, "localhost"                          # Your HTTP server, Apache/etc
 role :app, "localhost"                          # This may be the same as your `Web` server
 role :db,  "localhost", :primary => true # This is where Rails migrations will run
 
-#role :db,  "your slave db-server here"
-
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
-#after "deploy", "deploy:production"
+
 
 after "deploy:update_code", "init:create_db"
 after  "init:create_db", "deploy:migrate" 
 
-# if you want to clean up old releases on each deploy uncomment this:
+
 # after "deploy:restart", "deploy:cleanup"
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
 
- #If you are using Passenger mod_rails uncomment this:
- namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
-   task :production do
-    # set :bundle_without, [:development, :test]
-    # set :rails_env, 'production'
-   end	  
- end
-
-
-  namespace :init do
-    task :create_db, :roles => :app, :except => { :no_release => true } do
+namespace :init do
+   task :create_db, :roles => :app, :except => { :no_release => true } do
 	#run "cd #{current_path}; rake RAILS_ENV=#{rails_env} db:create"
-    end
+   end
+end
+
+namespace :utils do
+  desc "Restart Apache2 Service"
+  task :restartA2, :role => :app do
+    run  "cd /etc/init.d/httpd restart"
   end
+end
+
+namespace :bundler do
+  desc "Run: bundle install"
+  task :install_gems, :role => :app do
+     run "#{current_release} bundle install"
+  end
+
+  desc "Run: bundle update"
+  task :update_gems, :role => :app do
+     run "#{current_release} bundle update"
+  end
+
+  desc "Install Bundler"
+  task :install_bundler, :role => :app do
+    run "gem install bundler"
+  end
+end
+
+
+namespace :deploy do
+  task :start, :roles => :app do
+    sudo "chown -R apache:apache #{current_release}/public"
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+
+  task :stop, :roles => :app do
+    # Do nothing.
+  end
+
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+  desc "Migrate DB"
+  task :migrate_db do
+    run "cd #{current_path} && bundle exec rake db:migrate RAILS_ENV=production"
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+
+  task :load_schema, :roles => :app do
+    run "cd #{current_path}; RAILS_ENV=production rake db:schema:load"
+  end
+end
+
+namespace :run_rake do
+  desc "Run a task on a remote server: cap run_rake:invoke task="
+  # run like: cap staging rake:invoke task=a_certain_task
+  task :invoke, :roles => :app do
+    run("cd #{deploy_to}/current; rake #{ENV['task']} RAILS_ENV=production")
+  end
+end
+# after 'deploy:install_gems'

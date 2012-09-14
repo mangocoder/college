@@ -1,0 +1,9 @@
+Rails Error: Unable to access log file. Please ensure that /var/www/college/log/development.log exists and is chmod 0666. The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+

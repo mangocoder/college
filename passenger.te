@@ -1,0 +1,18 @@
+
+module passenger 1.0;
+
+require {
+	type httpd_tmp_t;
+	type devpts_t;
+	type httpd_t;
+	type httpd_sys_script_t;
+	class chr_file { read write };
+	class fifo_file { create setattr };
+}
+
+#============= httpd_sys_script_t ==============
+allow httpd_sys_script_t devpts_t:chr_file { read write };
+allow httpd_sys_script_t httpd_tmp_t:fifo_file setattr;
+
+#============= httpd_t ==============
+allow httpd_t httpd_tmp_t:fifo_file { create setattr };

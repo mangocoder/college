@@ -1,0 +1,650 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (166.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (217.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20120911144558)
+  [4;35;1mSQL (114.0ms)[0m   [0mCREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `roll_no` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (49.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120911144558')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mdescribe `students`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2012-09-11 20:17:30) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 122ms (View: 2, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-09-11 20:17:36) [GET]
+
+ActionController::RoutingError (No route matches "/student" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/chunked.rb:15:in `call'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:67:in `process'
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+  /usr/lib/ruby/1.8/rack/handler/mongrel.rb:38:in `run'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-11 20:17:41) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://localhost/students]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2012-09-11 20:17:50) [GET]
+  [4;35;1mStudent Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/students
+Rendering students/new
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/students/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2012-09-11 20:17:56) [POST]
+  Parameters: {"authenticity_token"=>"5ki4Oju7ppocKg2zPLvvYrh1HVokZwFW6wnswYWXqb4=", "commit"=>"Create", "student"=>{"roll_no"=>"1", "name"=>"chandrakala"}}
+  [4;36;1mStudent Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Create (0.2ms)[0m   [0;1mINSERT INTO `students` (`updated_at`, `roll_no`, `created_at`, `name`) VALUES('2012-09-11 14:47:56', 1, '2012-09-11 14:47:56', 'chandrakala')[0m
+  [4;35;1mSQL (57.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/students/1
+Completed in 66ms (DB: 60) | 302 Found [http://localhost/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2012-09-11 20:17:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`id` = 1) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/students/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (447.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (272.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20120911144558)
+  [4;35;1mSQL (46.4ms)[0m   [0mCREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `roll_no` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120911144558')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `students`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 206.183.111.25 at 2012-09-12 07:31:49) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 24ms (View: 3, DB: 1) | 200 OK [http://180.149.241.115/rails/info/properties]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-12 07:31:56) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 229ms (View: 218, DB: 0) | 200 OK [http://180.149.241.115/students]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#new (for 206.183.111.25 at 2012-09-12 07:31:58) [GET]
+  [4;35;1mStudent Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/students
+Rendering students/new
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://180.149.241.115/students/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#create (for 206.183.111.25 at 2012-09-12 07:32:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UgKmSl6Uuv6DpqsyAEH+u/7WdtE3C9T0jYrLePZTVT0=", "student"=>{"name"=>"ghj", "roll_no"=>"46"}}
+  [4;36;1mStudent Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Create (0.3ms)[0m   [0;1mINSERT INTO `students` (`name`, `created_at`, `updated_at`, `roll_no`) VALUES('ghj', '2012-09-12 11:32:02', '2012-09-12 11:32:02', 46)[0m
+  [4;35;1mSQL (50.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://180.149.241.115:5000/students/1
+Completed in 63ms (DB: 52) | 302 Found [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#show (for 206.183.111.25 at 2012-09-12 07:32:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (59.3ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`id` = 1) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 97ms (View: 30, DB: 60) | 200 OK [http://180.149.241.115/students/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-12 07:32:03) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20120911144558)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `students`[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-12 13:13:11) [GET]
+Rendering pages/home
+Completed in 107ms (View: 104, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-12 13:13:17) [GET]
+  [4;36;1mStudent Load (0.4ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 487ms (View: 475, DB: 2) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-12 13:13:31) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-12 13:25:10) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-12 13:30:02) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 04:40:04) [GET]
+Rendering pages/home
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 04:57:03) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 04:57:37) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-13 04:58:37) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (44.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 305ms (View: 192, DB: 45) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-13 05:22:59) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-13 05:23:14) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (27.7ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 46ms (View: 9, DB: 28) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 05:41:18) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:15:56) [GET]
+Rendering pages/home
+Completed in 96ms (View: 93, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:16:16) [GET]
+Rendering pages/home
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:17:56) [GET]
+Rendering pages/home
+Completed in 98ms (View: 95, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:25:24) [GET]
+Rendering pages/home
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:26:19) [GET]
+Rendering pages/home
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-13 08:26:24) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 181ms (View: 142, DB: 2) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#show (for 206.183.111.25 at 2012-09-13 08:26:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`id` = 1) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 91ms (View: 82, DB: 1) | 200 OK [http://180.149.241.115/students/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 206.183.111.25 at 2012-09-13 08:26:27) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://180.149.241.115/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:27:29) [GET]
+Rendering pages/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://180.149.241.115/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 206.183.111.25 at 2012-09-13 08:27:36) [GET]
+Rendering pages/home
+Completed in 105ms (View: 103, DB: 0) | 200 OK [http://180.149.241.115/]
+/!\ FAILSAFE /!\  Thu Sep 13 20:24:47 +0530 2012
+  Status: 500 Internal Server Error
+  Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (13)
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Sep 13 20:25:38 +0530 2012
+  Status: 500 Internal Server Error
+  Can't connect to local MySQL server through socket '/var/run/mysql/mysql.sock' (2)
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `real_connect'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:589:in `connect'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:203:in `initialize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `new'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:75:in `mysql_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/webwerks/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /home/webwerks/.rvm/gems/ruby-1.8.7-p370@college/gems/rails-2.3.5/lib/commands/server.rb:111
+    script/server:3:in `require'
+    script/server:3
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (212.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (259.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20120911144558)
+  [4;35;1mSQL (147.4ms)[0m   [0mCREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `roll_no` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (108.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120911144558')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `students`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `students`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2012-09-13 20:33:04) [GET]
+Rendering pages/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-13 20:33:11) [GET]
+  [4;36;1mStudent Load (0.2ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 35ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2012-09-13 20:33:12) [GET]
+  [4;35;1mStudent Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/students
+Rendering students/new
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/students/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2012-09-13 20:33:15) [POST]
+  Parameters: {"authenticity_token"=>"mfC3nU5t+QyI+WM5jrBut69pJWwKU1cWaLuX5oYPVSs=", "commit"=>"Create", "student"=>{"name"=>"dsa", "roll_no"=>"asds"}}
+  [4;36;1mStudent Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Create (0.2ms)[0m   [0;1mINSERT INTO `students` (`name`, `roll_no`, `updated_at`, `created_at`) VALUES('dsa', 0, '2012-09-13 15:03:15', '2012-09-13 15:03:15')[0m
+  [4;35;1mSQL (127.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/students/1
+Completed in 134ms (DB: 129) | 302 Found [http://localhost/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2012-09-13 20:33:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`id` = 1) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/students/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-13 20:33:16) [GET]
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 36ms (View: 4, DB: 1) | 200 OK [http://localhost/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2012-09-13 20:33:18) [GET]
+  [4;36;1mStudent Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Rendering template within layouts/students
+Rendering students/new
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/students/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2012-09-13 20:33:23) [POST]
+  Parameters: {"authenticity_token"=>"mfC3nU5t+QyI+WM5jrBut69pJWwKU1cWaLuX5oYPVSs=", "commit"=>"Create", "student"=>{"name"=>"dasds", "roll_no"=>"ds22"}}
+  [4;35;1mStudent Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Create (0.2ms)[0m   [0mINSERT INTO `students` (`name`, `roll_no`, `updated_at`, `created_at`) VALUES('dasds', 0, '2012-09-13 15:03:23', '2012-09-13 15:03:23')[0m
+  [4;36;1mSQL (114.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/students/2
+Completed in 121ms (DB: 116) | 302 Found [http://localhost/students]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2012-09-13 20:33:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mStudent Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`id` = 2) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/students/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-13 20:33:24) [GET]
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;36;1mStudent Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/students]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#destroy (for 127.0.0.1 at 2012-09-13 20:33:27) [DELETE]
+  Parameters: {"authenticity_token"=>"mfC3nU5t+QyI+WM5jrBut69pJWwKU1cWaLuX5oYPVSs=", "id"=>"1"}
+  [4;35;1mStudent Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.2ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Destroy (0.1ms)[0m   [0;1mDELETE FROM `students` WHERE `id` = 1[0m
+  [4;35;1mSQL (75.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/students
+Completed in 80ms (DB: 76) | 302 Found [http://localhost/students/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-13 20:33:27) [GET]
+  [4;36;1mStudent Load (1.5ms)[0m   [0;1mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+  [4;35;1mStudent Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+Completed in 9ms (View: 4, DB: 2) | 200 OK [http://localhost/students]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#destroy (for 127.0.0.1 at 2012-09-13 20:33:28) [DELETE]
+  Parameters: {"authenticity_token"=>"mfC3nU5t+QyI+WM5jrBut69pJWwKU1cWaLuX5oYPVSs=", "id"=>"2"}
+  [4;36;1mStudent Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Destroy (0.1ms)[0m   [0mDELETE FROM `students` WHERE `id` = 2[0m
+  [4;36;1mSQL (93.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/students
+Completed in 99ms (DB: 95) | 302 Found [http://localhost/students/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2012-09-13 20:33:28) [GET]
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM `students` [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/students]

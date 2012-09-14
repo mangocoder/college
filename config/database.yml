@@ -21,8 +21,8 @@ development:
   database: college_development
   pool: 5
   username: root
-  password: root
-  socket: /var/run/mysqld/mysqld.sock
+  password: techprocess123
+  socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -45,4 +45,4 @@ production:
   pool: 5
   username: root
   password: techprocess123
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /var/lib/mysql/mysql.sock

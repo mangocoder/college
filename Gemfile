@@ -6,6 +6,8 @@ gem "mysql"
 # gem "nokogiri", "1.4.2"
 # gem "geokit"
 gem 'capistrano'
+gem "passenger", "~> 3.0.17"
+
 group :development do
   # bundler requires these gems in development
   # gem "rails-footnotes"

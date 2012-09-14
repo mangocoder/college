@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-
+puts 'rvm >>>>>>'
 set :rvm_ruby_string, 'ruby-1.8.7-p370@college'
 
 set :application, "college"

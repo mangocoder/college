@@ -59,7 +59,7 @@ end
 
 namespace :deploy do
   task :start, :roles => :app do
-    sudo "chown -R apache:apache #{current_release}/public"
+    run "chown -R apache:apache #{current_release}/public"
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 

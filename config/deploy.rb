@@ -18,7 +18,7 @@ role :db,  "180.149.241.115", :primary => true # This is where Rails migrations 
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
-
+after "deploy", "deploy:prooduction"
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
 
@@ -36,11 +36,18 @@ after "deploy", "deploy:cleanup"
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
+   task :production do
+     # this is the default, but left here for reference
+     set :bundle_without, [:development, :test]
+     # other production specific settings, like
+      set :rails_env, 'production'
+   end	
    after "deploy:update_code", "init:check_db_existance"
-  end
+ end
+
 
   namespace :init do
-   task :check_db_existance do
-      run "cd #{current_path}; bundle exec rake db:create RAILS_ENV=#{rails_env}" 
-   end
+    task :create_db, :roles => :app, :except => { :no_release => true } do
+	run "cd #{current_path}; bundle exec rake RAILS_ENV=#{rails_env} db:create"
+    end
   end

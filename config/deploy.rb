@@ -35,4 +35,16 @@ after "deploy", "deploy:cleanup"
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
- end
+   after "deploy:update_code", :link_production_db
+  end
+
+# database.yml task
+   desc "Link in the production database.yml"
+   task :link_production_db do
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+   end
+
+  namespace :init do
+   task :check_db_existance do
+   end
+  end

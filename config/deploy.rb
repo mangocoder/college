@@ -17,7 +17,7 @@ role :db,  "localhost", :primary => true # This is where Rails migrations will r
 set :deploy_to, "/var/www/college"
 set :keep_releases, 3 
 set :server, :passenger
-after "deploy", "deploy:production"
+#after "deploy", "deploy:production"
 
 after "deploy:update_code", "init:create_db"
 after  "init:create_db", "deploy:migrate" 
@@ -36,8 +36,8 @@ after  "init:create_db", "deploy:migrate"
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
    task :production do
-     set :bundle_without, [:development, :test]
-     set :rails_env, 'production'
+    # set :bundle_without, [:development, :test]
+    # set :rails_env, 'production'
    end	  
  end
 

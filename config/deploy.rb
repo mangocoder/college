@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 set :bundle_gemfile,  "Gemfile"
+default_run_options[:pty] = true
 
 set :application, "college"
 
